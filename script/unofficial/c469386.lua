@@ -2,6 +2,7 @@
 --created by sooba
 local s,id=GetID()
 function s.initial_effect(c)
+	c:EnableCounterPermit(0x1f)
 	--Activate
 	local e1=Effect.CreateEffect(c)
 	e1:SetCategory(CATEGORY_DESTROY)
