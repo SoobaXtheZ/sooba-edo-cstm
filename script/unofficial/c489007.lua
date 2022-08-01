@@ -23,9 +23,8 @@ local e2=Effect.CreateEffect(c)
 	e2:SetOperation(s.repop)
 	c:RegisterEffect(e2)
 end
-s.listed_series={0x15}
-function s.desfilter(c,e,tp)
-	return c:IsFaceup() and c:IsSetCard(0x15)
+unction s.desfilter(c,e,tp)
+	return c:IsCanBeEffectTarget(e) and (c:IsControler(1-tp) or (c:IsFaceup() and c:IsMonster() and c:IsRace(RACE_MACHINE)))
 end
 function s.desrescon(sg,e,tp,mg)
     local own=sg:FilterCount(Card.IsControler,nil,tp)
